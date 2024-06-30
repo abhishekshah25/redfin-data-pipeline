@@ -55,7 +55,7 @@ The pipeline leverages the following services:
 
 1. Scalable: The pipeline processes over 100,000 records monthly.
 2. Efficient: Ensures efficient data handling via automated ETL processes.
-3. Insightful: Provides detailed and interactive visualizations for real estate market analysis.
+3. Insightful: Provides detailed & interactive visualizations for real estate market analysis.
 
 ### Getting Started
 
