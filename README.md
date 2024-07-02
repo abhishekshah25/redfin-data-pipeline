@@ -4,7 +4,7 @@
 
 ![RedFin Chart](https://github.com/abhishekshah25/redfin-data-pipeline/assets/147745895/01e5a82d-4a5e-432f-bd21-147151a9447f)
 
-The RedFin Data Pipeline is designed to streamline & automate the process of extracting, transforming, and visualizing real estate data. By leveraging tools and services like Apache Airflow, Amazon EC2, AWS S3, Amazon EMR, Snowflake and Power BI, this pipeline efficiently handles over 200,000 records monthly ensuring scalable and reliable data processing & insightful market analysis.
+The RedFin Data Pipeline is designed to streamline & automate the process of extracting, transforming and visualizing real estate data. By leveraging tools and services like Apache Airflow, Amazon EC2, AWS S3, Amazon EMR, Snowflake and Power BI, this pipeline efficiently handles over 200,000 records monthly ensuring scalable and reliable data processing & insightful market analysis.
 
 ![DAG_RedFin](https://github.com/abhishekshah25/redfin-data-pipeline/assets/147745895/0682ffcc-94b1-41e1-81ac-d61021ed200c)
 
