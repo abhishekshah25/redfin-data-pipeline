@@ -1,11 +1,13 @@
 DROP DATABASE IF EXISTS redfin_database_1;
+
 CREATE DATABASE redfin_database_1;
+
 -- CREATE WAREHOUSE redfin_warehouse;
+
 CREATE SCHEMA redfin_schema;
 
-// Create Table
-
 TRUNCATE TABLE redfin_database_1.redfin_schema.redfin_table;
+
 CREATE OR REPLACE TABLE redfin_database_1.redfin_schema.redfin_table (
 period_duration INT,
 city STRING,
@@ -26,9 +28,11 @@ SELECT *
 FROM redfin_database_1.redfin_schema.redfin_table LIMIT 50;
 
 SELECT COUNT(*) FROM redfin_database_1.redfin_schema.redfin_table;
+
 -- DESC TABLE redfin_database.redfin_schema.redfin_table;
 
 // Create file format object
+  
 CREATE SCHEMA file_format_schema;
 CREATE OR REPLACE file format redfin_database_1.file_format_schema.format_parquet
 type = 'PARQUET'
