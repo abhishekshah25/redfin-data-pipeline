@@ -1,33 +1,22 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 
-#Create a spark session
 spark = SparkSession.builder.appName("RedfinDataAnalysis").getOrCreate()
 
 def transform_date():
     raw_data_s3_bucket = "s3://redfin-data-yml/store-raw-data-yml/city_market_tracker.tsv000.gz"
     transform_data_s3_bucket = "s3://redfin-data-yml/redfin-transform-zone-yml/redfin_data.parquet"
-    #Read the redfin data from the s3 bucket
+    
     redfin_data = spark.read.csv(raw_data_s3_bucket, header=True, inferSchema=True, sep= "\t")
 
-    #Select only specific columns
+    # Select only specific columns
     df_redfin = redfin_data.select(['period_end','period_duration', 'city', 'state', 'property_type',
         'median_sale_price', 'median_ppsf', 'homes_sold', 'inventory', 'months_of_supply', 'median_dom', 'sold_above_list', 'last_updated'])
 
-
-    #remove na 
     df_redfin = df_redfin.na.drop()
-
-    #Extract year from period_end and save in a new column "period_end_yr"
     df_redfin = df_redfin.withColumn("period_end_yr", year(col("period_end")))
-
-    #Extract month from period_end and save in a new column "period_end_month"
     df_redfin = df_redfin.withColumn("period_end_month", month(col("period_end")))
-
-    # Drop period_end and last_updated columns
     df_redfin = df_redfin.drop("period_end", "last_updated")
-
-    #let's map the month number to their respective month name.
 
     df_redfin = df_redfin.withColumn("period_end_month", 
                     when(col("period_end_month") == 1, "January")
@@ -45,8 +34,6 @@ def transform_date():
                     .otherwise("Unknown")
                     )
 
-
-    # Let us write the final dataframe into our s3 bucket as a parquet file.    
     df_redfin.write.mode("overwrite").parquet(transform_data_s3_bucket)
 
 transform_date()
