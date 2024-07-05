@@ -121,7 +121,6 @@ with DAG('redfin_analytics_spark_job_dag',
         task_id="tsk_add_transformation_step",
         job_flow_id="{{ task_instance.xcom_pull(task_ids='tsk_create_emr_cluster', key='return_value') }}",
         steps=SPARK_STEPS_TRANSFORMATION,
-        # do_xcom_push=True, # Enable XCom push to monitor step status
         )
 
         is_transformation_completed = EmrStepSensor(
