@@ -30,7 +30,7 @@ The pipeline leverages the following services:
 
 -> Apache Airflow on EC2 orchestrates the ETL processes.
 
--> Amazon EMR performs data transformation tasks to ensure data is cleaned and transformed for further consumption.
+-> Amazon EMR performs data transformation tasks to ensure data is cleaned & transformed for further consumption.
 
 
 ![EC2_RedFin](https://github.com/abhishekshah25/redfin-data-pipeline/assets/147745895/49b2957f-202e-41b1-ad76-1989cbfcffe0)
