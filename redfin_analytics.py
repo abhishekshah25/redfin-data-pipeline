@@ -85,7 +85,6 @@ with DAG('redfin_analytics_spark_job_dag',
 
         start_pipeline = DummyOperator(task_id="tsk_start_pipeline")
 
-        # Create an EMR cluster
         create_emr_cluster = EmrCreateJobFlowOperator(
             task_id="tsk_create_emr_cluster",
             job_flow_overrides=job_flow_overrides,
@@ -100,12 +99,10 @@ with DAG('redfin_analytics_spark_job_dag',
         mode='poke',
         )
 
-        # Add your steps to the EMR cluster
         add_extraction_step = EmrAddStepsOperator(
         task_id="tsk_add_extraction_step",
         job_flow_id="{{ task_instance.xcom_pull(task_ids='tsk_create_emr_cluster', key='return_value') }}",
         steps=SPARK_STEPS_EXTRACTION,
-        # do_xcom_push=True, # Enable XCom push to monitor step status
         )
 
         is_extraction_completed = EmrStepSensor(
