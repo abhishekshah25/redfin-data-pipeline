@@ -9,7 +9,6 @@ def transform_date():
     
     redfin_data = spark.read.csv(raw_data_s3_bucket, header=True, inferSchema=True, sep= "\t")
 
-    # Select only specific columns
     df_redfin = redfin_data.select(['period_end','period_duration', 'city', 'state', 'property_type',
         'median_sale_price', 'median_ppsf', 'homes_sold', 'inventory', 'months_of_supply', 'median_dom', 'sold_above_list', 'last_updated'])
 
