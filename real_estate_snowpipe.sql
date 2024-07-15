@@ -57,7 +57,7 @@ list @redfin_database_1.external_stage_schema.redfin_ext_stage_yml;
 
 -- Create schema for snowpipe
 
--- DROP SCHEMA redfin_database.snowpipe_schema;
+-- DROP SCHEMA redfin_database_1.snowpipe_schema;
 
 CREATE OR REPLACE SCHEMA redfin_database_1.snowpipe_schema;
 
