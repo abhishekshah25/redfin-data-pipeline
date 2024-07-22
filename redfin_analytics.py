@@ -63,7 +63,7 @@ SPARK_STEPS_EXTRACTION = [
             ],
         },
     }, 
-   ]  # Only change the region of the jar 
+   ] 
 
 SPARK_STEPS_TRANSFORMATION = [
     {
