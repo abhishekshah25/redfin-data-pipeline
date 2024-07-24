@@ -61,7 +61,7 @@ list @redfin_database_1.external_stage_schema.redfin_ext_stage_yml;
 
 CREATE OR REPLACE SCHEMA redfin_database_1.snowpipe_schema;
 
--- Create Pipe
+-- Create Snow Pipe
 
 CREATE OR REPLACE PIPE redfin_database_1.snowpipe_schema.redfin_snowpipe
 auto_ingest = TRUE
