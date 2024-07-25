@@ -18,7 +18,7 @@ def transform_date():
     df_redfin = df_redfin.drop("period_end", "last_updated")
 
     df_redfin = df_redfin.withColumn("period_end_month", 
-                    when(col("period_end_month") == 1, "January")
+                     when(col("period_end_month") == 1, "January")
                     .when(col("period_end_month") == 2, "February")
                     .when(col("period_end_month") == 3, "March")
                     .when(col("period_end_month") == 4, "April")
