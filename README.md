@@ -28,7 +28,7 @@ The pipeline leverages the following services:
 
 #### Transformation:
 
--> Apache Airflow on EC2 orchestrates the ETL processes.
+-> Apache Airflow on Amazon EC2 Server orchestrates the ETL processes.
 
 -> Amazon EMR performs data transformation tasks to ensure data is cleaned & transformed for further consumption.
 
