@@ -14,7 +14,7 @@ The pipeline leverages the following services:
 2. AWS S3: Holds the data which is to be later used by Amazon EMR for data transformation.
 3. Amazon EMR: Handles data transformation tasks & loads the transformed data back to S3 to be further consumed by Snowflake.
 4. Snowflake: Leverages Snowpipe to auto-populate the transformed data from S3 to Snowflake Databases.
-5. Power BI: Visualizes the Snowflake database data for insightful reporting.
+5. Power BI: Visualizes the Snowflake data for insightful reporting.
 
 
 ### Data Flow
