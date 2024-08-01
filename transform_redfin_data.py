@@ -11,12 +11,10 @@ def transform_date():
 
     df_redfin = redfin_data.select(['period_end','period_duration', 'city', 'state', 'property_type',
         'median_sale_price', 'median_ppsf', 'homes_sold', 'inventory', 'months_of_supply', 'median_dom', 'sold_above_list', 'last_updated'])
-
     df_redfin = df_redfin.na.drop()
     df_redfin = df_redfin.withColumn("period_end_yr", year(col("period_end")))
     df_redfin = df_redfin.withColumn("period_end_month", month(col("period_end")))
     df_redfin = df_redfin.drop("period_end", "last_updated")
-
     df_redfin = df_redfin.withColumn("period_end_month", 
                      when(col("period_end_month") == 1, "January")
                     .when(col("period_end_month") == 2, "February")
@@ -32,7 +30,6 @@ def transform_date():
                     .when(col("period_end_month") == 12, "December")
                     .otherwise("Unknown")
                     )
-
     df_redfin.write.mode("overwrite").parquet(transform_data_s3_bucket)
 
 transform_date()
