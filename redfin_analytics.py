@@ -80,7 +80,7 @@ SPARK_STEPS_TRANSFORMATION = [
 
 with DAG('redfin_analytics_spark_job_dag',
         default_args=default_args,
-        # schedule_interval = '@weekly',
+        schedule_interval = '@weekly',
         catchup=False) as dag:
 
         start_pipeline = DummyOperator(task_id="tsk_start_pipeline")
@@ -144,6 +144,5 @@ with DAG('redfin_analytics_spark_job_dag',
         )
 
         end_pipeline = DummyOperator(task_id="tsk_end_pipeline")
-
 
         start_pipeline >> create_emr_cluster  >> is_emr_cluster_created >> add_extraction_step >> is_extraction_completed >> add_transformation_step >> is_transformation_completed >> remove_cluster >> is_emr_cluster_terminated >> end_pipeline
