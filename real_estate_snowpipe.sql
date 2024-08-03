@@ -55,8 +55,6 @@ FILE_FORMAT = redfin_database_1.file_format_schema.format_parquet;
 
 list @redfin_database_1.external_stage_schema.redfin_ext_stage_yml;
 
--- Create schema for snowpipe
-
 -- DROP SCHEMA redfin_database_1.snowpipe_schema;
 
 CREATE OR REPLACE SCHEMA redfin_database_1.snowpipe_schema;
