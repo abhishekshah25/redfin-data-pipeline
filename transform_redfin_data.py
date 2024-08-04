@@ -6,7 +6,6 @@ spark = SparkSession.builder.appName("RedfinDataAnalysis").getOrCreate()
 def transform_date():
     raw_data_s3_bucket = "s3://redfin-data-yml/store-raw-data-yml/city_market_tracker.tsv000.gz"
     transform_data_s3_bucket = "s3://redfin-data-yml/redfin-transform-zone-yml/redfin_data.parquet"
-    
     redfin_data = spark.read.csv(raw_data_s3_bucket, header=True, inferSchema=True, sep= "\t")
 
     df_redfin = redfin_data.select(['period_end','period_duration', 'city', 'state', 'property_type',
