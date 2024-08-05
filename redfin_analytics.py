@@ -67,7 +67,7 @@ SPARK_STEPS_EXTRACTION = [
 
 SPARK_STEPS_TRANSFORMATION = [
     {
-        "Name": "Transform Redfin data",
+        "Name": "Transform Data",
         "ActionOnFailure": "CANCEL_AND_WAIT",
         "HadoopJarStep": {
             "Jar": "command-runner.jar",
