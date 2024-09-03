@@ -21,7 +21,7 @@ The pipeline leverages the following services:
 
 #### Extraction:
 
--> Use the RedFin API to extract real estate data
+-> Use the RedFin API to extract real estate data.
 
 
 ![S3_RedFin](https://github.com/abhishekshah25/redfin-data-pipeline/assets/147745895/1992d6f9-2a3d-40c8-9b23-24204345b226)
