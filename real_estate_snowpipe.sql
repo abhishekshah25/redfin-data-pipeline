@@ -49,8 +49,8 @@ CREATE SCHEMA external_stage_schema;
 
 CREATE OR REPLACE STAGE redfin_database_1.external_stage_schema.redfin_ext_stage_yml
 url="s3://redfin-data-yml/redfin-transform-zone-yml/redfin_data.parquet/"
-credentials=(aws_key_id='xxxxxxxx'
-aws_secret_key='xxxxxx')
+credentials=(aws_key_id='xxxxxxxxxx'
+aws_secret_key='xxxxxxxx')
 FILE_FORMAT = redfin_database_1.file_format_schema.format_parquet;
 
 list @redfin_database_1.external_stage_schema.redfin_ext_stage_yml;
