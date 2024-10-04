@@ -12,7 +12,7 @@ default_args = {
     'owner': 'Smudgy',
     'depends_on_past': False,
     'start_date': datetime(2024, 6, 26),
-    'email': ['smudgy@gmail.com'],
+    'email': ['smudger49@gmail.com'],
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 2,
