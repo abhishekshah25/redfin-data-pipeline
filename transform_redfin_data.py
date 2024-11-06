@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 
-spark = SparkSession.builder.appName("RedfinDataPipeline").getOrCreate()
+spark = SparkSession.builder.appName("RedFinDataPipeline").getOrCreate()
 
 def transform_date():
     raw_data_s3_bucket = "s3://redfin-data-yml/store-raw-data-yml/city_market_tracker.tsv000.gz"
