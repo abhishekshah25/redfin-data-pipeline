@@ -36,7 +36,7 @@ job_flow_overrides = {
             },
             {
                 "Name": "Core node",
-                "Market": "ON_DEMAND", # Spot instances are a "use as available" instances
+                "Market": "ON_DEMAND", # Spot instances
                 "InstanceRole": "CORE",
                 "InstanceType": "m4.large",
                 "InstanceCount": 1
