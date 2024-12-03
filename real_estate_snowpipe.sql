@@ -43,8 +43,6 @@ compression = 'SNAPPY';
 
 CREATE SCHEMA external_stage_schema;
 
--- Create staging schema
-
 -- DROP STAGE redfin_database_1.external_stage_schema.redfin_ext_stage_yml;
 
 CREATE OR REPLACE STAGE redfin_database_1.external_stage_schema.redfin_ext_stage_yml
