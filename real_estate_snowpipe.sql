@@ -25,7 +25,7 @@ period_end_month STRING
 );
 
 SELECT *
-FROM redfin_database_1.redfin_schema.redfin_table LIMIT 50;
+FROM redfin_database_1.redfin_schema.redfin_table LIMIT 100;
 
 SELECT COUNT(*) FROM redfin_database_1.redfin_schema.redfin_table;
 
@@ -66,6 +66,5 @@ COPY INTO redfin_database_1.redfin_schema.redfin_table
 FROM @redfin_database_1.external_stage_schema.redfin_ext_stage_yml
 FILE_FORMAT = (TYPE = 'PARQUET')
 MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
-
 
 DESC PIPE redfin_database_1.snowpipe_schema.redfin_snowpipe;
