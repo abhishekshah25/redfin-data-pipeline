@@ -11,8 +11,8 @@ from airflow.providers.amazon.aws.sensors.emr import EmrJobFlowSensor, EmrStepSe
 default_args = {
     'owner': 'Smudgy',
     'depends_on_past': False,
-    'start_date': datetime(2024, 6, 26),
-    'email': ['Smudger49@gmail.com'],
+    'start_date': datetime(2024, 9, 26),
+    'email': ['Smudgy49@gmail.com'],
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 2,
