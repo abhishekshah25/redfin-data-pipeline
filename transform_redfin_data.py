@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 
-spark = SparkSession.builder.appName("RedFinDataPipeline").getOrCreate()
+spark = SparkSession.builder.appName("RedfinDataPipeline").getOrCreate()
 
 def transform_date():
     
